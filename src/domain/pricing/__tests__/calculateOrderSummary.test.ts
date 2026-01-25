@@ -59,5 +59,19 @@ describe("calculateOrderSummary", () => {
     expect(result.pointsDiscount).toBe(20_000);
     expect(result.grandTotal).toBe(80_000);
   });
+
+  test("카테고리 한정 쿠폰은 해당 카테고리 상품에만 할인 적용한다", () => {
+    const items: CartLine[] = [
+      { productId: "p1", unitPrice: 40_000, quantity: 1, category: "Food" },
+      { productId: "p2", unitPrice: 60_000, quantity: 1, category: "Home" },
+    ];
+    const context = baseContext({
+      coupon: percentCoupon({ percent: 10, eligibleCategories: ["Food"] }),
+    });
+    const rules = { ...defaultPricingRules, baseShippingFee: 0 };
+    const result = calculateOrderSummary(items, context, rules);
+    expect(result.couponDiscount).toBe(4_000);
+    expect(result.grandTotal).toBe(96_000);
+  });
 });
 
