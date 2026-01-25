@@ -63,10 +63,6 @@ export const ProductDetailPage = () => {
           <p className="mt-3 text-sm text-slate-600">{product.description}</p>
         </div>
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
-          <div className="flex items-center justify-between text-sm text-slate-500">
-            <span>재고</span>
-            <span>{product.stock}개 남음</span>
-          </div>
           <div className="mt-2 flex items-center justify-between text-sm text-slate-500">
             <span>평점</span>
             <span>{product.rating.toFixed(1)} / 5.0</span>
