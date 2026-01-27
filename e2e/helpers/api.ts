@@ -1,9 +1,8 @@
-import { test } from "@playwright/test";
 import type { APIRequestContext } from "@playwright/test";
 
-const API_BASE_URL = "http://localhost:3000";
+export const API_BASE_URL = "http://localhost:3000";
 
-async function deleteAllByQuery(
+export async function deleteAllByQuery(
   request: APIRequestContext,
   path: string,
 ): Promise<void> {
@@ -17,13 +16,17 @@ async function deleteAllByQuery(
   );
 }
 
-async function resetCartForUser(request: APIRequestContext, userId: string) {
+export async function resetCartForUser(
+  request: APIRequestContext,
+  userId: string,
+) {
   await deleteAllByQuery(request, `/cartItems?userId=${userId}`);
 }
 
-async function resetOrdersForUser(request: APIRequestContext, userId: string) {
+export async function resetOrdersForUser(
+  request: APIRequestContext,
+  userId: string,
+) {
   await deleteAllByQuery(request, `/orders?userId=${userId}`);
 }
-
-export { API_BASE_URL, deleteAllByQuery, resetCartForUser, resetOrdersForUser, test };
 
