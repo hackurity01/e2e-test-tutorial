@@ -12,7 +12,6 @@ export type Product = {
   description: string;
   category: string;
   rating: number;
-  isOutOfStock: boolean;
 };
 
 export type CartItem = {
