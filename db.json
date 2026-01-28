@@ -6,6 +6,13 @@
       "email": "demo@breeze.com",
       "password": "demo1234",
       "createdAt": "2026-01-24T00:00:00.000Z"
+    },
+    {
+      "id": "e477",
+      "name": "테스트 사용자",
+      "email": "test-1769572509261@example.com",
+      "password": "test123456",
+      "createdAt": "2026-01-28T03:55:10.046Z"
     }
   ],
   "products": [
@@ -65,5 +72,19 @@
     }
   ],
   "cartItems": [],
-  "orders": []
+  "orders": [
+    {
+      "id": "e985",
+      "userId": "1",
+      "items": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 89000
+        }
+      ],
+      "total": 89000,
+      "createdAt": "2026-01-28T03:52:13.796Z"
+    }
+  ]
 }
